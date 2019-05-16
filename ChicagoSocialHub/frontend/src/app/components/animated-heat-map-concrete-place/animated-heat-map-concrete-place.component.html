@@ -1,0 +1,43 @@
+<button mat-raised-button color="primary" routerLink="/list_of_places/heat_map_divvy_stations"
+  class="heat-button-real-time">
+  Real Time HeatMap
+  &nbsp; &nbsp; &nbsp;
+  <mat-icon>map</mat-icon>
+</button>
+<div ngbDropdown class="d-inline-block" style="background-color: #3f51b5">
+  <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle style="color: white;">Last 30 Minutes Animated HeatMap</button>
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+    <button class="dropdown-item" (click)="halfHourAnimatedMap()">Last 30 Minutes Animated HeatMap</button>
+    <button class="dropdown-item" (click)="twentyFourHoursAnimatedMap()">Last 24 Hours Animated
+      HeatMap</button>
+  </div>
+</div>
+&nbsp;&nbsp;&nbsp;
+<button mat-raised-button color="primary" (click)="stopPlayAnimate()" id="stop-button" style="opacity: 1">
+  Stop
+  &nbsp; &nbsp; &nbsp;
+  <mat-icon>stop</mat-icon>
+</button>
+&nbsp;&nbsp;&nbsp;
+<button mat-raised-button color="primary" (click)="playAnimateAgain()" id="play-button" style="opacity: 0">
+  Play
+  &nbsp; &nbsp; &nbsp;
+  <mat-icon>play_arrow</mat-icon>
+</button>
+<button mat-raised-button color="primary" routerLink="/list_of_stations/google_map_marker" id="back-button"
+  style="opacity: 1; float: right; margin-right: 10px">
+  Back
+  &nbsp; &nbsp; &nbsp;
+  <mat-icon>arrow_back</mat-icon>
+</button>
+
+
+<div id="google-map-container">
+  <div id="google-map">
+    <agm-map [(latitude)]="location.lat" [(longitude)]="location.lng" [(zoom)]="location.zoom" [disableDefaultUI]="true"
+      [zoomControl]="false" [gestureHandling]="none" (mapReady)="onMapLoad($event)">
+    </agm-map>
+  </div>
+  <div id="date">
+  </div>
+</div>

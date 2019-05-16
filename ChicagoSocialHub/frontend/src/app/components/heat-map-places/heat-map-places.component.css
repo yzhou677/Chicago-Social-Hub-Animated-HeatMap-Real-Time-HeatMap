@@ -1,0 +1,7 @@
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+agm-map {
+    height: 500px;
+}
+.d-inline-block{
+    margin-left: 20px;
+}

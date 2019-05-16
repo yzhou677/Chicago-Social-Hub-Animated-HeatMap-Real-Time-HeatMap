@@ -1,0 +1,25 @@
+agm-map {
+    height: 500px;
+}
+
+.heat-button-animated {
+    margin-left: 20px;
+}
+
+#loading-sign {
+    opacity: 0;
+    margin-left: 50px;
+    width: 0.5px;
+    height: 0.5px;
+}
+
+#google-map-container {
+    position: relative;
+}
+
+#google-map, #date {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 20px;
+}

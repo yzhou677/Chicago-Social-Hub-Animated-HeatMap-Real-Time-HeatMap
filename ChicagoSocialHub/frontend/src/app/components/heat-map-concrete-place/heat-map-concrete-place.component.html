@@ -1,0 +1,35 @@
+<div id="buttons">
+  <button mat-raised-button color="primary" (click)="goToAnimatedHeatMap()" class="heat-button-animated">
+    Animated HeatMap
+    &nbsp; &nbsp; &nbsp;
+    <mat-icon>map</mat-icon>
+  </button>
+  &nbsp;&nbsp;&nbsp;
+  <button mat-raised-button color="primary" (click)="changeGradient()" id="change-gradient-button" style="opacity: 1">
+    Change gradient
+    &nbsp; &nbsp; &nbsp;
+    <mat-icon>map</mat-icon>
+  </button>
+
+  <button mat-raised-button color="primary" routerLink="/list_of_stations/google_map_marker" id="back-button"
+    style="opacity: 1; float: right; margin-right: 10px">
+    Back
+    &nbsp; &nbsp; &nbsp;
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</div>
+
+<div text="blue" id="loading-sign" style="text-align:center;">
+  <p style="color: white; font-size: 20px">loading...</p>
+  <mat-spinner mode="indeterminate" style="margin:0 auto;"></mat-spinner>
+</div>
+
+<div id="google-map-container">
+  <div id="google-map">
+    <agm-map [(latitude)]="location.lat" [(longitude)]="location.lng" [(zoom)]="location.zoom" [disableDefaultUI]="true"
+      [zoomControl]="true" (mapReady)="onMapLoad($event)">
+    </agm-map>
+  </div>
+  <div id="date">
+  </div>
+</div>
